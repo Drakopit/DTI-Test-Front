@@ -1,0 +1,30 @@
+<div class="row">
+	<label for="exampleDataList" class="form-label">Produtos</label>
+	<input class="form-control" [(ngModel)]="productTerm" (keyup.enter)="getAllProductSearch(productTerm);" placeholder="Type to search...">
+	<button type="button" class="btn btn-dark mb-3" (click)="getAllProductSearch(productTerm);">Carregar Produto(s)</button>	
+</div>
+<div class="row">
+	<table class="table table-houver">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Quantidade</th>
+				<th scope="col">Valor Unitário</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let product of productSeach" (click)="getProduct(product);">
+				<th scope="row">{{product.id}}</th>
+				<td>{{product.name}}</td>
+				<td>{{product.count}}</td>
+				<td>{{product.value}}</td>
+                <td><a routerLink="/app-product-crud" routerLinkActive="active" (click)="editProduct(product)">Editar</a> | 
+                    <a routerLink="/app-product-crud" routerLinkActive="active" (click)="deleteProduct(product)">Excluir</a></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<button type="button" class="btn btn-primary md-3" (click)="insertProduct()">Inserir</button>
+		</tfoot>
+	</table>
+</div>

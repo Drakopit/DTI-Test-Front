@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="row">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="product.name">
+    </div>
+    <div class="row">
+        <label for="count" class="form-label">Quantidade</label>
+        <input type="text" class="form-control" id="count" placeholder="Count" [(ngModel)]="product.count">
+    </div>
+    <div class="row">
+        <label for="value" class="form-label">Valor Unitário</label>
+        <input type="text" class="form-control" id="value" placeholder="Value" [(ngModel)]="product.value">
+    </div>
+    <button type="button" class="btn btn-primary mb-3" (click)="insertProduct(product);">Salvar</button>
+    <button type="button" class="btn btn-dark mb-3" (click)="editProduct(product);">Salvar Edição</button>
+    <!-- <button *ngIf="create == true" type="button" class="btn btn-primary mb-3" (click)="insertProduct();">Salvar</button>
+    <button *ngIf="create == false" type="button" class="btn btn-green mb-3" (click)="editProduct();">Salvar Edição</button> -->
+</div>
+<button type="button" class="btn btn-primary mb-3" routerLink="/app-product-home" routerLinkActive="active">Back</button>
